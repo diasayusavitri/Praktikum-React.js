@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import Home from './Component/Fungsional/Home';
+import Parent from './Component/Class/Parent.jsx';
+//import logo from './logo.svg';
+//import Home from './Component/Fungsional/Home';
 //import Beranda from './Component/Class/Beranda';
-//import './App.css';
+//import './App.css';~   
 
-function App() {
+function App() { 
   return (
-    <div className="App">
-    <Home/>
+    <div className="App ">
+    <Parent/>
     </div>
   );
 }
