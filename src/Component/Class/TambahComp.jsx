@@ -13,7 +13,8 @@ class TambahComp extends PureComponent {
             nim: '',
             nama: '',
             jurusan: '',
-            response: ''
+            response: '',
+            display: 'none'
             
         }
     }
@@ -30,11 +31,13 @@ class TambahComp extends PureComponent {
         }).then(json => {
             if(json.data.state === 200){
                 this.setState({
-                    response: json.data.values
+                    response: json.data.values,
+                    display: 'block'
                 })
             }else {
                 this.setState({
-                    response: json.data.values
+                    response: json.data.values,
+                    display: 'block'
                 })
             }
         })
@@ -44,6 +47,9 @@ class TambahComp extends PureComponent {
         return (
             <Container>
                 <h4>Form Tambah Data</h4>
+                <Alert color="success" style={{display: this.state.display}}>
+                    {this.state.response}
+                </Alert>
                 <Form className="form">
                     <Col>
                     <Label>NIM</Label>
