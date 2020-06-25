@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+//import Parent from './Component/Class/Parent';
 //import BootstrapComp from './Component/Class/BootstrapComp';
 import NavbarComp from './Component/Fungsional/NavbarComp';
 import HomePage from './Component/Fungsional/HomePage';
@@ -10,21 +11,22 @@ import ListComp from './Component/Class/ListComp';
 //import logo from './logo.svg';
 //import Home from './Component/Fungsional/Home';
 //import Beranda from './Component/Class/Beranda';
-//import './App.css';~   
+//import './App.css';
 
 const App = () => {
   return (
     <BrowserRouter>
       <NavbarComp />
-      <Switch>
+      <switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/about" component={About} />
         <Route exact path="/mahasiswa" component={ListComp} />
 
-        {/* <Route exact path="/detail/:id" component={DetailComp} /> */}
-
-      </Switch>
+       {/* {/<Route exact path="/detail/:id" component={DetailComp} />/} */}
+      </switch>
     </BrowserRouter>
+
+
 
 
   );

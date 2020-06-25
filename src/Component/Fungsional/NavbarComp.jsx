@@ -14,7 +14,6 @@ const NavbarComp = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
-
     return (
         <div>
             <Navbar color="light" light expand="md">
@@ -38,5 +37,4 @@ const NavbarComp = (props) => {
         </div>
     )
 }
-
-export default NavbarComp;
+export default NavbarComp
