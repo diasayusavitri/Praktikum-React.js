@@ -12,6 +12,7 @@ import EditComp from './Component/Class/EditComp';
 import KelasComp from './Component/Hooks/Class/KelasComp';
 import HooksComp from './Component/Hooks/Functional/HooksComp';
 import HooksUseEffects from './Component/Hooks/Functional/HooksUseEffects';
+import { CartContext } from './CartContext';
 
 //import logo from './logo.svg';
 //import Home from './Component/Fungsional/Home';
@@ -21,24 +22,22 @@ import HooksUseEffects from './Component/Hooks/Functional/HooksUseEffects';
 const App = () => {
   return (
     <BrowserRouter>
-      <NavbarComp />
-      <switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/mahasiswa" component={ListComp} />
-        <Route exact path="/mahasiswa/tambah" component={TambahComp} />
-        <Route exact path="/mahasiswa/edit" component={EditComp} />
-        <Route exact path="/kelas" component={KelasComp} />
-        <Route exact path="/hooks" component={HooksComp} />
-        <Route exact path="/useeffects" component={HooksUseEffects} />
+      <CartContext.Provider value=" ini adalah data context">
+        <NavbarComp />
+        <switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/mahasiswa" component={ListComp} />
+          <Route exact path="/mahasiswa/tambah" component={TambahComp} />
+          <Route exact path="/mahasiswa/edit" component={EditComp} />
+          <Route exact path="/kelas" component={KelasComp} />
+          <Route exact path="/hooks" component={HooksComp} />
+          <Route exact path="/useeffects" component={HooksUseEffects} />
 
-       {/* {/<Route exact path="/detail/:id" component={DetailComp} />/} */}
-      </switch>
+          {/* {/<Route exact path="/detail/:id" component={DetailComp} />/} */}
+        </switch>
+      </CartContext.Provider>
     </BrowserRouter>
-
-
-
-
   );
 }
 
