@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 //import Parent from './Component/Class/Parent';
 //import BootstrapComp from './Component/Class/BootstrapComp';
@@ -13,6 +13,7 @@ import KelasComp from './Component/Hooks/Class/KelasComp';
 import HooksComp from './Component/Hooks/Functional/HooksComp';
 import HooksUseEffects from './Component/Hooks/Functional/HooksUseEffects';
 import { CartContext } from './CartContext';
+import ProductComp from './Component/Fungsional/ProductComp';
 
 //import logo from './logo.svg';
 //import Home from './Component/Fungsional/Home';
@@ -20,9 +21,12 @@ import { CartContext } from './CartContext';
 //import './App.css';
 
 const App = () => {
+
+  const [value, setValue] = useState(0)
+
   return (
     <BrowserRouter>
-      <CartContext.Provider value=" ini adalah data context">
+      <CartContext.Provider value={{value, setValue}}>
         <NavbarComp />
         <switch>
           <Route exact path="/" component={HomePage} />
@@ -33,6 +37,7 @@ const App = () => {
           <Route exact path="/kelas" component={KelasComp} />
           <Route exact path="/hooks" component={HooksComp} />
           <Route exact path="/useeffects" component={HooksUseEffects} />
+          <Route exact path="/produk" component={ProductComp} />
 
           {/* {/<Route exact path="/detail/:id" component={DetailComp} />/} */}
         </switch>
